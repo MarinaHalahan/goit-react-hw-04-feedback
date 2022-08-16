@@ -1,16 +1,10 @@
+import { SectionWrap } from './Section/Section';
+import { FeedbackCounter } from './feedbackCounter/feedbackCounter';
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <SectionWrap title="Please leave feedback">
+      <FeedbackCounter></FeedbackCounter>
+    </SectionWrap>
   );
 };
