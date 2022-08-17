@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { SectionWrap } from '../Section/Section';
+import { Statistics } from '../Statistics/Statistics';
+import { Button } from '../FeedbackOptions/FeedbackOptions';
+import { Notification } from '../Notification/Notification';
 
 export class FeedbackCounter extends Component {
   state = {
@@ -43,28 +47,30 @@ export class FeedbackCounter extends Component {
   render() {
     return (
       <>
-        <button type="button" onClick={this.incrementGoodFeedback}>
-          Good
-        </button>
-        <button type="button" onClick={this.incrementNeutralFeedback}>
-          Neutral
-        </button>
-        <button type="button" onClick={this.incrementBadFeedback}>
-          Bad
-        </button>
-        <ul>
-          <li>
-            Good: <span>{this.state.good}</span>
-          </li>
-          <li>
-            Neutral: <span>{this.state.neutral}</span>
-          </li>
-          <li>
-            Bad: <span>{this.state.bad}</span>
-          </li>
-        </ul>
-        <p>Total:{this.countTotalFeedback()}</p>
-        <p>Positive Feedback: {this.positivePercentage()}%</p>
+        <SectionWrap title="Please leave feedback">
+          <button type="button" onClick={this.incrementGoodFeedback}>
+            Good
+          </button>
+          <button type="button" onClick={this.incrementNeutralFeedback}>
+            Neutral
+          </button>
+          <button type="button" onClick={this.incrementBadFeedback}>
+            Bad
+          </button>
+        </SectionWrap>
+        <SectionWrap title="Statistics">
+          {this.countTotalFeedback() > 0 ? (
+            <Statistics
+              good={this.state.good}
+              neutral={this.state.neutral}
+              bad={this.state.bad}
+              total={this.countTotalFeedback()}
+              positivePercentage={this.positivePercentage()}
+            ></Statistics>
+          ) : (
+            <Notification message="There is no feedback"></Notification>
+          )}
+        </SectionWrap>
       </>
     );
   }
