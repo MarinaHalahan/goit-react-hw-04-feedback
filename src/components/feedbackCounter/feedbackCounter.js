@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { SectionWrap } from '../Section/Section';
 import { Statistics } from '../Statistics/Statistics';
-import { Button } from '../FeedbackOptions/FeedbackOptions';
+// import { Button } from '../FeedbackOptions/FeedbackOptions';
 import { Notification } from '../Notification/Notification';
 
 export class FeedbackCounter extends Component {
