@@ -54,7 +54,7 @@ export class FeedbackCounter extends Component {
   render() {
     const { good, neutral, bad } = this.state;
     const options = Object.keys(this.state);
-    console.log(options);
+
     return (
       <>
         <SectionWrap title="Please leave feedback">
