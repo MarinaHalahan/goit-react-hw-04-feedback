@@ -1,4 +1,4 @@
-import { FeedbackCounter } from './FeedbackCounter/feedbackCounter';
+import { FeedbackCounter } from './Counter/feedbackCounter';
 
 export const App = () => {
   return (
