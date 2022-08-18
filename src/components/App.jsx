@@ -1,5 +1,9 @@
-import { FeedbackCounter } from './components/FeedbackCounter/feedbackCounter';
+import { FeedbackCounter } from './FeedbackCounter/feedbackCounter';
 
 export const App = () => {
-  return <FeedbackCounter></FeedbackCounter>;
+  return (
+    <>
+      <FeedbackCounter></FeedbackCounter>
+    </>
+  );
 };
