@@ -5,6 +5,8 @@ import { FeedbackOptions } from '../FeedbackOptions/FeedbackOptions';
 import { Notification } from '../Notification/Notification';
 
 export class FeedbackCounter extends Component {
+ 
+
   state = {
     good: 0,
     neutral: 0,
@@ -18,28 +20,6 @@ export class FeedbackCounter extends Component {
       };
     });
   };
-  // incrementGoodFeedback = () => {
-  //   this.setState(prevState => {
-  //     return {
-  //       good: prevState.good + 1,
-  //     };
-  //   });
-  // };
-
-  // incrementNeutralFeedback = () => {
-  //   this.setState(prevState => {
-  //     return {
-  //       neutral: prevState.neutral + 1,
-  //     };
-  //   });
-  // };
-  // incrementBadFeedback = () => {
-  //   this.setState(prevState => {
-  //     return {
-  //       bad: prevState.bad + 1,
-  //     };
-  //   });
-  // };
 
   countTotalFeedback = () =>
     this.state.good + this.state.neutral + this.state.bad;
@@ -62,15 +42,6 @@ export class FeedbackCounter extends Component {
             options={options}
             onLeaveFeedback={this.incrementFeedback}
           ></FeedbackOptions>
-          {/* <button type="button" onClick={this.incrementGoodFeedback}>
-            Good
-          </button>
-          <button type="button" onClick={this.incrementNeutralFeedback}>
-            Neutral
-          </button>
-          <button type="button" onClick={this.incrementBadFeedback}>
-            Bad
-          </button> */}
         </SectionWrap>
         <SectionWrap title="Statistics">
           {this.countTotalFeedback() > 0 ? (

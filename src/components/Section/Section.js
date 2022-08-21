@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Section, Title } from './Section.styled';
 
 export const SectionWrap = ({ title, children }) => {
@@ -7,4 +8,8 @@ export const SectionWrap = ({ title, children }) => {
       {children}
     </Section>
   );
+};
+
+SectionWrap.propTypes = {
+  title: PropTypes.string,
 };
