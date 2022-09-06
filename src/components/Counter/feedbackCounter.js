@@ -5,8 +5,6 @@ import { FeedbackOptions } from '../FeedbackOptions/FeedbackOptions';
 import { Notification } from '../Notification/Notification';
 
 export class FeedbackCounter extends Component {
- 
-
   state = {
     good: 0,
     neutral: 0,
@@ -41,7 +39,7 @@ export class FeedbackCounter extends Component {
           <FeedbackOptions
             options={options}
             onLeaveFeedback={this.incrementFeedback}
-          ></FeedbackOptions>
+          />
         </SectionWrap>
         <SectionWrap title="Statistics">
           {this.countTotalFeedback() > 0 ? (
@@ -51,9 +49,9 @@ export class FeedbackCounter extends Component {
               bad={bad}
               total={this.countTotalFeedback()}
               positivePercentage={this.positivePercentage()}
-            ></Statistics>
+            />
           ) : (
-            <Notification message="There is no feedback"></Notification>
+            <Notification message="There is no feedback" />
           )}
         </SectionWrap>
       </>
